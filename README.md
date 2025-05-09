@@ -53,7 +53,7 @@ where $$N$$ = number of data points used for observation
 $$r_i$$ is computed as:
 
 $$
-r_i = \frac{S_i}{S_{i-1}}
+r_i = \ln\left(\frac{S_i}{S_{i-1}}\right)
 $$
 
 where $$S_i$$ and $${S_{i-1}}$$ are share prices of two consecutive days.
