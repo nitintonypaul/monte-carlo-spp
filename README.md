@@ -69,7 +69,7 @@ $$
 
 
 Where
-$$\bar{r}$$ = mean($$r_i$$) and $$\sigma$$ = Volatility
+$$\bar{r}$$ = mean of ($$r_i$$) and $$\sigma$$ = Volatility
 
 
 And finally, $$W_t$$ is the **Wiener Process** which is randomly computed from a normal distribution (Here, between 0 and 1). It can be computed by:
