@@ -6,8 +6,8 @@
 
 **Monte Carlo Simulation** is a process by taking random events and generating a huge number of outcomes. In each case the outcome is stored in an array, or technically any method of reaccessible storage, and the average of all the outcomes is computed. This would be the predicted outcome of the random event. Monte Carlo Simulations are generally used in random events having more than just a few outcomes, unlike tossing a coin. For example, predicting the next stock price in the given time frame.
 
-### How do we use it here?
-Even though Monte Carlo is generally carried out by taking random outcomes of an event, that is not this program does. Taking past share prices, grouping them into a data structure and finding their average may not seem fitting. We instead use a mathematical formula designed for dynamic optimization in randomness. The **Geometric Brownian Motion**. So, what we are doing in this program is basically "Guided Randomness".
+### What are we doing here?
+Even though Monte Carlo is generally carried out by taking random outcomes of an event, that is not what this program does. Taking past share prices, grouping them into a data structure and finding their average may not seem fitting. Instead we use a mathematical formula designed for dynamic optimization in randomness. The **Geometric Brownian Motion**. So, what we are doing in this program is basically "Guided Randomness".
 
 ### Geometric Brownian Motion
 Here, we utilize GBM to predict the share price of the next time slot for a given time period.
