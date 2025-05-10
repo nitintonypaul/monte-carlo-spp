@@ -93,7 +93,7 @@ Which is a simplified version of the original Geometric Brownian Motion for Mont
 ---
 
 ### How do we use Monte Carlo Simulation here?
-Very easy. We obtain the values of Drift ($$\mu$$), Volatility ($$\sigma$$) and Current Price ($$S_0$$) from an API and chuck the values into GBM for a desired $$t$$ while randomly selecting and computing $$W_t$$.
+Very easy. We obtain the values of Drift ($$\mu$$), Volatility ($$\sigma$$) and Current Price ($$S_0$$) from an API (yfinance) and chuck the values into GBM for a desired $$t$$ while randomly selecting and computing $$W_t$$.
 This process is repeated a huge number of times, while each time, the result $$S_t$$ is stored. Finally the average of all the values is obtained as the expected price after the desired time period $$t$$ from the start of the operation.
 
 ### PSEUDOCODE
