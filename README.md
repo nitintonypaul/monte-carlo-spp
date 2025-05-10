@@ -101,13 +101,13 @@ This process is repeated a huge number of times, while each time, the result $$S
 ```text
 IMPORT dependencies (numpy, yfinance, math, datetime)
 
-DECLARE function data_scrape(stock) #where stock is a string
+DECLARE function data_scrape(stock) #stock is a string
   COMPUTE stock as yf.Ticker(stock)
   FETCH data from stock.history(period="1y")
   FETCH prices from data["Close"]
   COMPUTE returns as np.log(prices / prices.shift(1)).dropna()
   FETCH mean from returns.mean()
-  FETCH volatility from returns.std() #std -> standard deviation
+  FETCH volatility from returns.std() #standard deviation
   RETURN mean and volatility as a tuple
 
 FETCH stock from the user
@@ -125,7 +125,7 @@ FOR an integer i from 0 to 1000:
   COMPUTE St = price * (math.e ** ((mean - volatility ** 2) * time + volatility * Wt))
   INCREASE price_sum by St
 
-FETCH expected_price from priceSum/iterations
+FETCH expected_price from price_sum/iterations
 
 PRINT stock
 PRINT date, time and price
