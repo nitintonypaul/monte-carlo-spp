@@ -97,7 +97,7 @@ Very easy. We obtain the values of Drift ($$\mu$$), Volatility ($$\sigma$$) and 
 This process is repeated a huge number of times, while each time, the result $$S_t$$ is stored. Finally the average of all the values is obtained as the expected price after the desired time period $$t$$ from the start of the operation.
 
 ### PSEUDOCODE
-
+Comments are given by ```#A Hashtag (This is a comment)```
 ```text
 IMPORT dependencies (numpy, yfinance, math, datetime)
 
@@ -112,7 +112,7 @@ DECLARE function data_scrape(stock) #stock is a string
 
 FETCH stock from the user
 FETCH data_today from yf.Ticker(stock).history(period="1d")
-FETCH price from data_today["Close"].iloc[-1]   #Gets todays price
+FETCH price from data_today["Close"].iloc[-1]   #Gets today's price
 FETCH mean and volatility from data_scrape(stock)
 FETCH date and time from datetime.now()
 
