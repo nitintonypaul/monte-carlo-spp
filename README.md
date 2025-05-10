@@ -14,7 +14,7 @@ Here, we utilize GBM to predict the share price of the next time slot for a give
 The Geometric Brownian Motion we use is of the form
 
 $$
-S_t = S_0 e^{(\mu - 0.5 \sigma^2)t} + \sigma W_t
+S_t = S_0 e^{(\mu - 0.5 \sigma^2)t + \sigma W_t}
 $$
 
 Here:
