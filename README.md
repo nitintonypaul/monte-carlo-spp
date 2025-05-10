@@ -85,7 +85,7 @@ And, $$Z$$ is the random number selected from a normal distribution of 0 and 1.
 For code convenience I've taken the equation as:
 
 $$
-S_t = S_0 e^{(\bar{r} - \sigma^2)t} + \sigma W_t
+S_t = S_0 e^{(\bar{r} - \sigma^2)t + \sigma W_t}
 $$
 
 Which is a simplified version of the original Geometric Brownian Motion for Monte Carlo Simulation.
