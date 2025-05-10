@@ -96,4 +96,40 @@ Which is a simplified version of the original Geometric Brownian Motion for Mont
 Very easy. We obtain the values of Drift ($$\mu$$), Volatility ($$\sigma$$) and Current Price ($$S_0$$) from an API and chuck the values into GBM for a desired $$t$$ while randomly selecting and computing $$W_t$$.
 This process is repeated a huge number of times, while each time, the result $$S_t$$ is stored. Finally the average of all the values is obtained as the expected price after the desired time period $$t$$ from the start of the operation.
 
+### PSEUDOCODE
+
+```text
+IMPORT dependencies (numpy, yfinance, math, datetime)
+
+DECLARE function data_scrape(stock) #where stock is a string
+  COMPUTE stock as yf.Ticker(stock)
+  FETCH data from stock.history(period="1y")
+  FETCH prices from data["Close"]
+  COMPUTE returns as np.log(prices / prices.shift(1)).dropna()
+  FETCH mean from returns.mean()
+  FETCH volatility from returns.std() #std -> standard deviation
+  RETURN mean and volatility as a tuple
+
+FETCH stock from the user
+FETCH data_today from yf.Ticker(stock).history(period="1d")
+FETCH price from data_today["Close"].iloc[-1]   #Gets todays price
+FETCH mean and volatility from data_scrape(stock)
+FETCH date and time from datetime.now()
+
+DECLARE price_sum, time, base_wt, iterations as 0, 1/252, (1/252) ** 0.5, 1000 respectively
+
+#Simulate 1000 possible price paths using GBM
+FOR an integer i from 0 to 1000:
+  FETCH rand from np.random.normal(0,1)
+  COMPUTE Wt = rand * base_wt
+  COMPUTE St = price * (math.e ** ((mean - volatility ** 2) * time + volatility * Wt))
+  INCREASE price_sum by St
+
+FETCH expected_price from priceSum/iterations
+
+PRINT stock
+PRINT date, time and price
+PRINT expected_price
+```
+
 ---
