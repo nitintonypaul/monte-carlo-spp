@@ -38,7 +38,7 @@ For the GBM we use in this Monte Carlo Simulation, we assume that $$\mu$$ and $$
 ---
 
 ### Mathematical Explanation
-I know, it looks confusing. But it's actually quite simple. What we are finding is $$S_t$$ which is the price which are predicting. It is predicted from $$S_0$$ (Price at the moment) multiplied with an expression. Let me break it down to you.
+I know, it looks confusing. But it's actually quite simple. What we are finding is $$S_t$$ which is the price which we are forecasting. It is predicted from $$S_0$$ (Price at the moment) multiplied with an expression. Let me break it down to you.
 
 $$\sigma$$ denotes the **Volatility** or how wild the share price moves. A highly volatile share has a good chance of changing from a significantly low amount to something that's off the clouds and vice versa. An example is **GameStop** (GME) during 2021 when it went from around **$7** all the way up to an all time high of **$120.75**. 
 
@@ -125,7 +125,7 @@ FOR an integer i from 0 to 1000:
   COMPUTE St = price * (math.e ** ((mean - volatility ** 2) * time + volatility * Wt))
   INCREASE price_sum by St
 
-FETCH expected_price from price_sum/iterations
+COMPUTE expected_price as price_sum/iterations
 
 PRINT stock
 PRINT date, time and price
