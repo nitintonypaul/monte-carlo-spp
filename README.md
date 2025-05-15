@@ -133,3 +133,9 @@ PRINT expected_price
 ```
 
 ---
+
+### Disclaimer
+
+Given its approximate accuracy of 30-45%, this project's Monte Carlo Simulation methodology is not employed by financial industries and serves solely as a pedagogical tool for understanding fundamental MCS principles. More advanced implementations, such as the Merton Jump Diffusion model, yield substantially more precise estimations, thereby underscoring the necessity of relying on rigorous analysis and dependable tools for critical financial decisions.
+
+---
