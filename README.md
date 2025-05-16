@@ -40,7 +40,7 @@ For the GBM we use in this Monte Carlo Simulation, we assume that $$\mu$$ and $$
 ### Mathematical Explanation
 I know, it looks confusing. But it's actually quite simple. What we are finding is $$S_t$$ which is the price which we are forecasting. It is predicted from $$S_0$$ (Price at the moment) multiplied with an expression. Let me break it down to you.
 
-$$\sigma$$ denotes the **Volatility** or how wild the share price moves. A highly volatile share has a good chance of changing from a significantly low amount to something that's off the clouds and vice versa. An example is **GameStop** (GME) during 2021 when it went from around **$7** all the way up to an all time high of **$120.75**. 
+- $$\sigma$$ denotes the **Volatility** or how wild the share price moves. A highly volatile share has a good chance of changing from a significantly low amount to something that's off the clouds and vice versa. An example is **GameStop** (GME) during 2021 when it went from around **$7** all the way up to an all time high of **$120.75**. 
 
 $$\sigma$$ is computed by 
 
@@ -61,7 +61,7 @@ where $$S_i$$ and $${S_{i-1}}$$ are share prices of two consecutive days.
 And finally, $$\bar{r}$$ is the mean of all $$r_i$$.
 
 
-Now, $$\mu$$ denotes the **Drift** or the average return over a set period of time. It's based on historical data, just like $$\sigma$$. But since we assume both $$\mu$$ and $$\sigma$$ are constant throughout. We can compute $$\mu$$ by:
+- Now, $$\mu$$ denotes the **Drift** or the average return over a set period of time. It's based on historical data, just like $$\sigma$$. But since we assume both $$\mu$$ and $$\sigma$$ are constant throughout. We can compute $$\mu$$ by:
 
 $$
 \mu = \bar{r} - 0.5\sigma^2
@@ -72,7 +72,7 @@ Where
 $$\bar{r}$$ = mean of ($$r_i$$) and $$\sigma$$ = Volatility
 
 
-And finally, $$W_t$$ is the **Wiener Process** which is randomly computed from a normal distribution (Here, between 0 and 1). It can be computed by:
+- And finally, $$W_t$$ is the **Wiener Process** which is randomly computed from a normal distribution (Here, between 0 and 1). It can be computed by:
 
 $$
 W_t = Z\sqrt{t}
@@ -136,6 +136,6 @@ PRINT expected_price
 
 ### Disclaimer
 
-Given its approximate accuracy of 30-45%, this project's Monte Carlo Simulation methodology is not employed by financial industries and serves solely as a pedagogical tool for understanding fundamental MCS principles. More advanced implementations, such as the Merton Jump Diffusion model, yield substantially more precise estimations, thereby underscoring the necessity of relying on rigorous analysis and dependable tools for critical financial decisions.
+Given its approximate accuracy of 30-45%, this project's Monte Carlo Simulation methodology is not employed by financial industries and serves solely as a pedagogical tool for understanding fundamental MCS principles. More advanced implementations, such as the [Merton Jump Diffusion model](https://github.com/nitintonypaul/merton-jdm), yield substantially more precise estimations, thereby underscoring the necessity of relying on rigorous analysis and dependable tools for critical financial decisions.
 
 ---
